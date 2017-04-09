@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.7.202.2:3306/
+    url: jdbc:mysql://127.7.202.2:3306/planeat
     username: adminBhczhvk
     password: yQHeEg4aLtDA
     driver-class-name: com.mysql.jdbc.Driver
