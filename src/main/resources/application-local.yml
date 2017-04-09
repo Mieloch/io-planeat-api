@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.7.202.2:3306/
-    username: adminBhczhvk
-    password: yQHeEg4aLtDA
+    url: jdbc:mysql://localhost/planeat
+    username: planeat
+    password: planeat
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
+
+
+
 
