@@ -8,6 +8,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5Dialect
 
 
-# Root User: adminxk7RqgE
-#   Root Password: GdvJu29zbXmR
-#   Database Name: planeat
+
+
+
