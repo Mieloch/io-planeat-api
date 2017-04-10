@@ -29,7 +29,7 @@ public class RecipeController {
     return coreToWeb.recipeList(all);
   }
 
-  @GetMapping("/recipes")
+  @GetMapping("/recipe")
   public List<RecipeWeb> getAllRecipes(@RequestParam String name) {
     List<Recipe> all = recipeRepository.findAllByNameContaining(name);
     return coreToWeb.recipeList(all);
