@@ -5,6 +5,7 @@ import org.planeat.core.model.Recipe;
 import org.planeat.web.converter.CoreToWeb;
 import org.planeat.web.model.RecipeWeb;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ public class RecipeController {
    *
    * @return list of all recipes in database
    */
+  @CrossOrigin
   @GetMapping("/recipes")
   public List<RecipeWeb> getAllRecipes() {
     List<Recipe> all = (List<Recipe>) recipeRepository.findAll();
@@ -43,6 +45,7 @@ public class RecipeController {
    * @param name query parameter
    * @return all recipes containing name parameter in name property
    */
+  @CrossOrigin
   @GetMapping("/recipe")
   public List<RecipeWeb> getAllRecipes(@RequestParam String name) {
     List<Recipe> all = recipeRepository.findAllByNameContaining(name);
