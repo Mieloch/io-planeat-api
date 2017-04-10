@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Rest controller for recipes CRUD operations
+ */
 @RestController
 public class RecipeController {
 
@@ -23,12 +26,23 @@ public class RecipeController {
     this.coreToWeb = coreToWeb;
   }
 
+  /**
+   * Endpoint designed to list all recipes from database
+   *
+   * @return list of all recipes in database
+   */
   @GetMapping("/recipes")
   public List<RecipeWeb> getAllRecipes() {
     List<Recipe> all = (List<Recipe>) recipeRepository.findAll();
     return coreToWeb.recipeList(all);
   }
 
+  /**
+   * Endpoint designed to query recipes by their names
+   *
+   * @param name query parameter
+   * @return all recipes containing name parameter in name property
+   */
   @GetMapping("/recipe")
   public List<RecipeWeb> getAllRecipes(@RequestParam String name) {
     List<Recipe> all = recipeRepository.findAllByNameContaining(name);
