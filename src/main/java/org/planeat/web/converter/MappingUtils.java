@@ -1,4 +1,4 @@
-package org.planeat.web.controller;
+package org.planeat.web.converter;
 
 import java.util.List;
 import java.util.function.Function;

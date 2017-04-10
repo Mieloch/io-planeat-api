@@ -1,6 +1,5 @@
 package org.planeat.core.db;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.planeat.core.model.Recipe;
 import org.planeat.core.model.RecipeBuilder;
@@ -24,7 +23,6 @@ public class RecipeRepositoryTest {
   @Autowired
   private ProductRepository productRepository;
 
-  @Test
   public void add_recipe() {
     Recipe recipe = RecipeBuilder.pastaWithChickenAndSpinache();
     Recipe save = recipeRepository.save(recipe);

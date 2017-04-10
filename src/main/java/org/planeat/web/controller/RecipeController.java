@@ -1,11 +1,12 @@
-package org.planeat.web.converter;
+package org.planeat.web.controller;
 
 import org.planeat.core.db.RecipeRepository;
 import org.planeat.core.model.Recipe;
-import org.planeat.web.controller.CoreToWeb;
+import org.planeat.web.converter.CoreToWeb;
 import org.planeat.web.model.RecipeWeb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,6 +26,12 @@ public class RecipeController {
   @GetMapping("/recipes")
   public List<RecipeWeb> getAllRecipes() {
     List<Recipe> all = (List<Recipe>) recipeRepository.findAll();
+    return coreToWeb.recipeList(all);
+  }
+
+  @GetMapping("/recipes")
+  public List<RecipeWeb> getAllRecipes(@RequestParam String name) {
+    List<Recipe> all = recipeRepository.findAllByNameContaining(name);
     return coreToWeb.recipeList(all);
   }
 

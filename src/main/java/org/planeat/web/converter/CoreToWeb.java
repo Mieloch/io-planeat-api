@@ -1,12 +1,10 @@
-package org.planeat.web.controller;
+package org.planeat.web.converter;
 
 import org.planeat.core.model.*;
 import org.planeat.web.model.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import static org.planeat.web.controller.MappingUtils.list;
 
 @Service
 public class CoreToWeb {
@@ -25,7 +23,7 @@ public class CoreToWeb {
   }
 
   public List<ProductWeb> productList(List<Product> products) {
-    return list(products, this::product);
+    return MappingUtils.list(products, this::product);
   }
 
   public IngredientWeb ingredient(Ingredient ingredient) {
@@ -41,7 +39,7 @@ public class CoreToWeb {
   }
 
   public List<IngredientWeb> ingredientList(List<Ingredient> ingredients) {
-    return list(ingredients, this::ingredient);
+    return MappingUtils.list(ingredients, this::ingredient);
   }
 
   public InstructionStepWeb instructionStep(InstructionStep instructionStep) {
@@ -56,7 +54,7 @@ public class CoreToWeb {
   }
 
   public List<InstructionStepWeb> instructionStepList(List<InstructionStep> instructionSteps) {
-    return list(instructionSteps, this::instructionStep);
+    return MappingUtils.list(instructionSteps, this::instructionStep);
   }
 
   public RecipeWeb recipe(Recipe recipe) {
@@ -74,7 +72,7 @@ public class CoreToWeb {
   }
 
   public List<RecipeWeb> recipeList(List<Recipe> recipes) {
-    return list(recipes, this::recipe);
+    return MappingUtils.list(recipes, this::recipe);
   }
 
   private DifficultyWeb difficulty(Difficulty difficulty) {
