@@ -1,7 +1,5 @@
 package org.planeat.core.service;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
 import org.planeat.core.db.UserRepository;
 import org.planeat.core.model.User;
 import org.planeat.core.model.exception.UserNotFoundException;
@@ -20,7 +18,6 @@ public class UserService {
     this.userRepository = userRepository;
   }
 
-  @NotNull
   public User register(User user) throws UsernameConflictException {
     User byUsername = userRepository.findByUsername(user.getUsername());
     if (byUsername != null || user.getId() != null) {
@@ -29,7 +26,6 @@ public class UserService {
     return userRepository.save(user);
   }
 
-  @Nullable
   public User login(String username) throws UserNotFoundException {
     User byUsername = userRepository.findByUsername(username);
     if (byUsername == null) {
