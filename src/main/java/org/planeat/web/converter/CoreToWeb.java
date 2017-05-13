@@ -27,7 +27,7 @@ public class CoreToWeb {
   }
 
   public IngredientWeb ingredient(Ingredient ingredient) {
-    if(ingredient == null){
+    if (ingredient == null) {
       return null;
     }
     IngredientWeb result = new IngredientWeb();
@@ -43,7 +43,7 @@ public class CoreToWeb {
   }
 
   public InstructionStepWeb instructionStep(InstructionStep instructionStep) {
-    if(instructionStep == null){
+    if (instructionStep == null) {
       return null;
     }
     InstructionStepWeb result = new InstructionStepWeb();
@@ -58,7 +58,7 @@ public class CoreToWeb {
   }
 
   public RecipeWeb recipe(Recipe recipe) {
-    if(recipe == null){
+    if (recipe == null) {
       return null;
     }
     RecipeWeb result = new RecipeWeb();
@@ -103,6 +103,16 @@ public class CoreToWeb {
       default:
         throw new IllegalArgumentException("Unable to convert Unit = " + unit.name());
     }
+  }
+
+
+  public UserWeb user(User user) {
+    UserWeb result = new UserWeb();
+    result.setEmail(user.getEmail());
+    result.setId(user.getId());
+    result.setPassword(user.getPassword());
+    result.setUsername(user.getUsername());
+    return result;
   }
 
 
