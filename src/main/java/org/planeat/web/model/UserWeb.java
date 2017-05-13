@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserWeb {
 
-  private long id;
+  private Long id;
   private String username;
   private String password;
   private String email;
