@@ -9,7 +9,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class IngredientWeb {
 
-  private long id;
+  private Long id;
   private int quantity;
   private UnitWeb unit;
   private ProductWeb product;

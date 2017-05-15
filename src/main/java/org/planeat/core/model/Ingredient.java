@@ -12,7 +12,7 @@ public class Ingredient {
 
   @Id
   @GeneratedValue
-  private long id;
+  private Long id;
 
   @Column(name = "quantity", nullable = false)
   private int quantity;
