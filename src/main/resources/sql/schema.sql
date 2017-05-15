@@ -128,7 +128,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `users_ingredients`
+--
 
+DROP TABLE IF EXISTS `users_ingredients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_ingredients` (
+  `user_id` bigint(20) NOT NULL,
+  `ingredient_id` bigint(20) NOT NULL,
+  KEY `FKmq2psj6syaa9ijw5xqm9gid23` (`ingredient_id`),
+  KEY `FK1a21767q69k8f9dwrreg6xden` (`user_id`),
+  CONSTRAINT `FK1a21767q69k8f9dwrreg6xden` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `FKmq2psj6syaa9ijw5xqm9gid23` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
